@@ -88,16 +88,16 @@ for i in ${pkglist[@]}; do
    /tmp/code-server/bin/code-server --install-extension $i
 done
 
-# echo "Add Settings code-server"
-# cp settings.json  /home/coder/.local/share/code-server/User
+echo "Add Settings code-server"
+cp settings.json  /home/coder/.local/share/code-server/User
 
-# echo 'alias code-server="/tmp/code-server/bin/code-server"' >> /home/coder/.bashrc
-# echo "update"
-# sudo apt-get -qq update
-# echo "install -y nano git curl python3 python3-venv python3-pip"
-# sudo apt-get -qq install -y nano git curl python3 python3-venv python3-pip 
-# echo "upgrade pip"
-# pip install -q --upgrade pip
-# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-# source /home/coder/.bashrc
-# nvm install --lts
+echo 'alias code-server="/tmp/code-server/bin/code-server"' >> /home/coder/.bashrc
+echo "update"
+sudo apt-get -qq update
+echo "install -y nano git curl python3 python3-venv python3-pip"
+sudo apt-get -qq install -y nano git curl python3 python3-venv python3-pip 
+echo "upgrade pip"
+pip install -q --upgrade pip
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+source /home/coder/.bashrc
+nvm install --lts
