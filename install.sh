@@ -1,5 +1,6 @@
+#!/usr/bin/bash -i
 
-
+set e
 if command -v code-server &> /dev/null; then
     code_extensions=$(sort < code_extensions)
     installed_extensions=$(code-server --list-extensions | sort)
