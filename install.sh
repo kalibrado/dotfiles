@@ -1,5 +1,18 @@
 #!/bin/bash
 
+echo "Add Settings code-server"
+cp settings.json  /home/coder/.local/share/code-server/User
+echo 'alias code-server="/tmp/code-server/bin/code-server"' >> ~/.bashrc
+echo "update"
+sudo apt-get -qq update
+echo "install -y nano git curl python3 python3-venv python3-pip"
+sudo apt-get -qq install -y nano git curl python3 python3-venv python3-pip 
+echo "upgrade pip"
+pip install -q --upgrade pip
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+source ~/.bashrc
+nvm install --lts
+
 
 # Visual Studio Code :: Package list
 pkglist=(
@@ -87,26 +100,5 @@ njpwerner.autodocstring
 )
 
 for i in ${pkglist[@]}; do
-  /tmp/code-server/bin/code-server --install-extension $i
+   code-server --install-extension $i
 done
-
-echo "Add Settings code-server"
-cp settings.json  /home/coder/.local/share/code-server/User
-
-echo "update"
-sudo apt-get -qq update
-
-echo "install -y zsh nano git curl python3 python3-venv python3-pip"
-sudo apt-get -qq install -y zsh nano git curl python3 python3-venv python3-pip 
-
-echo "upgrade pip"
-pip install -q --upgrade pip
-
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-source ~/.bashrc
-
-nvm install --lts
-
-echo "install ZSH"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sudo cp .zshrc /home/coder/.zshrc
