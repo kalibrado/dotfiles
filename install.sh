@@ -6,7 +6,7 @@ sudo apt full-upgrade -y
 sudo apt autoremove -y 
 
 echo "Install deps"
-sudo apt install -y zsh nano git curl 
+sudo apt install -y zsh nano git curl python3 python3.10-venv
 
 echo "Add Settings code-server"
 cp settings.json  /home/coder/.local/share/code-server/User 
