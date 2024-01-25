@@ -5,11 +5,19 @@ sudo apt update
 sudo apt full-upgrade -y 
 sudo apt autoremove -y 
 
+
 echo "Install deps"
-sudo apt install -y zsh nano git curl python3 python3.10-venv
+sudo apt install -y zsh nano git curl python3 python3-venv python3-pip
+pip install --upgrade pip
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+source ~/.bashrc
+nvm install --lts
 
 echo "Add Settings code-server"
 cp settings.json  /home/coder/.local/share/code-server/User 
+
+
+
 
 echo "install ZSH"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
