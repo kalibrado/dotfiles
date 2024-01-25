@@ -1,23 +1,18 @@
 #!/bin/bash
 
-echo "Update system"
-sudo apt update 
-sudo apt full-upgrade -y 
-sudo apt autoremove -y 
+echo "update"
+sudo apt-get -qq update
 
+echo "install -y zsh nano git curl python3 python3-venv python3-pip"
+sudo apt-get -qq install -y zsh nano git curl python3 python3-venv python3-pip 
 
-echo "Install deps"
-sudo apt install -y zsh nano git curl python3 python3-venv python3-pip
-pip install --upgrade pip
+echo "upgrade pip"
+pip install -q --upgrade pip
+
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 source ~/.bashrc
+
 nvm install --lts
-
-echo "Add Settings code-server"
-cp settings.json  /home/coder/.local/share/code-server/User 
-
-
-
 
 echo "install ZSH"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -112,3 +107,5 @@ for i in ${pkglist[@]}; do
   /tmp/code-server/bin/code-server --install-extension $i
 done
 
+echo "Add Settings code-server"
+cp settings.json  ~/.local/share/code-server/User/ 
