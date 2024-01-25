@@ -86,5 +86,5 @@ njpwerner.autodocstring
 )
 
 for i in ${pkglist[@]}; do
-  code-server --install-extension $i
+  /tmp/code-server/bin/code-server --install-extension $i
 done
