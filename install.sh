@@ -5,10 +5,8 @@
 pkglist=(
     aaron-bond.better-comments
     alexcvzz.vscode-sqlite
-    batisteo.vscode-django
-    castello-dev.bash-snippets
-    christian-kohler.npm-intellisense
-    coder.coder-remote
+    batisteo.vscode-django 
+    christian-kohler.npm-intellisense 
     DavidAnson.vscode-markdownlint
     dbaeumer.vscode-eslint
     donjayamanne.githistory
@@ -18,16 +16,10 @@ pkglist=(
     esbenp.prettier-vscode
     expo.vscode-expo-tools
     felipecaputo.git-project-manager
-    foxundermoon.shell-format
-    george-alisson.html-preview-vscode
-    GitHub.codespaces
-    github.vscode-github-actions
+    foxundermoon.shell-format 
     GitHub.vscode-pull-request-github
-    GrapeCity.gc-excelviewer
-    rpinski.shebang-snippets
-    lizebang.bash-extension-pack
-    rogalmic.bash-debug
-    shakram02.bash-beautify
+    GrapeCity.gc-excelviewer  
+    rogalmic.bash-debug 
     mads-hartmann.bash-ide-vscode
     mechatroner.rainbow-csv
     MS-CEINTL.vscode-language-pack-fr
@@ -40,36 +32,20 @@ pkglist=(
     ms-python.mypy-type-checker
     ms-python.pylint
     ms-python.python
-    ms-python.vscode-pylance
     Mukundan.python-docs
-    tushortz.python-extended-snippets
     ms-toolsai.jupyter-keymap
-    ms-vscode-remote.remote-containers
-    ms-vscode-remote.remote-ssh
-    ms-vscode-remote.remote-ssh-edit
-    ms-vscode-remote.remote-wsl
-    ms-vscode.remote-explorer
-    ms-vscode.cpptools
-    ms-vscode.cpptools-extension-pack
     ms-vscode.cpptools-themes
     ms-vscode.live-server
     ms-vscode.test-adapter-converter
     hbenl.vscode-test-explorer
-    Postman.postman-for-vscode
     redhat.vscode-yaml
-    sidthesloth.html5-boilerplate
     timonwong.shellcheck
-    VisualStudioExptTeam.intellicode-api-usage-examples
-    VisualStudioExptTeam.vscodeintellicode
     vscode-icons-team.vscode-icons
-    WallabyJs.quokka-vscode
     wholroyd.jinja
-    yy0931.save-as-root
     yzhang.markdown-all-in-one
     Zignd.html-css-class-completion
     ms-python.python
     vscodevim.vim
-    letmaik.git-tree-compare
     donjayamanne.githistory
     eamodio.gitlens
     equinusocio.vsc-material-theme-icons
@@ -91,9 +67,9 @@ for i in ${pkglist[@]}; do
 done
 
 echo "Add Settings code-server"
-cp settings.json  /home/coder/.local/share/code-server/User
+cp settings.json  ~/.local/share/code-server/User
 
-echo 'alias code-server="/tmp/code-server/bin/code-server"' >> /home/coder/.bashrc
+echo 'alias code-server="/tmp/code-server/bin/code-server"' >> ~/.bashrc
 echo "update"
 sudo apt-get -qq update
 echo "install -y nano git curl python3 python3-venv python3-pip"
@@ -101,5 +77,5 @@ sudo apt-get -qq install -y nano git curl python3 python3-venv python3-pip
 echo "upgrade pip"
 pip install -q --upgrade pip
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-source /home/coder/.bashrc
+source ~/.bashrc
 nvm install --lts
