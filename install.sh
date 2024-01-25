@@ -89,5 +89,4 @@ for i in ${pkglist[@]}; do
   /tmp/code-server/bin/code-server --install-extension $i
 done
 
-
 cp settings.json  /home/coder/.local/share/code-server/User 
