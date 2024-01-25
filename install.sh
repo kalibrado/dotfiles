@@ -89,4 +89,11 @@ for i in ${pkglist[@]}; do
   /tmp/code-server/bin/code-server --install-extension $i
 done
 
+echo "Add Settings code-server"
 cp settings.json  /home/coder/.local/share/code-server/User 
+
+echo "install ZSH"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
+sudo cp .zshrc ~/.zshrc
