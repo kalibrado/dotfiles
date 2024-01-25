@@ -2,7 +2,7 @@
 
 echo "Add Settings code-server"
 cp settings.json  /home/coder/.local/share/code-server/User
-echo 'alias code-server="/tmp/code-server/bin/code-server"' >> ~/.bashrc
+echo 'alias code-server="/tmp/code-server/bin/code-server"' >> /home/coder/.bashrc
 echo "update"
 sudo apt-get -qq update
 echo "install -y nano git curl python3 python3-venv python3-pip"
@@ -10,7 +10,7 @@ sudo apt-get -qq install -y nano git curl python3 python3-venv python3-pip
 echo "upgrade pip"
 pip install -q --upgrade pip
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-source ~/.bashrc
+source /home/coder/.bashrc
 nvm install --lts
 
 
@@ -98,7 +98,7 @@ shuworks.vscode-table-formatter
 esbenp.prettier-vscode
 njpwerner.autodocstring
 )
-
+alias
 for i in ${pkglist[@]}; do
-   code-server --install-extension $i
+   /tmp/code-server/bin/code-server --install-extension $i
 done
