@@ -45,7 +45,6 @@ pkglist=(
     yzhang.markdown-all-in-one
     Zignd.html-css-class-completion
     ms-python.python
-    vscodevim.vim
     donjayamanne.githistory
     eamodio.gitlens
     equinusocio.vsc-material-theme-icons
