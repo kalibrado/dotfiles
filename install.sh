@@ -32,7 +32,6 @@ pkglist=(
     ms-python.mypy-type-checker
     ms-python.pylint
     ms-python.python
-    Mukundan.python-docs
     ms-toolsai.jupyter-keymap
     ms-vscode.cpptools-themes
     ms-vscode.live-server
