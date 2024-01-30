@@ -69,5 +69,5 @@
     "*.sqlite3": "default"
   },
   "html.format.wrapLineLength": 250,
-  "workbench.colorTheme": "Default Light Modern"
+  "workbench.colorTheme": "GitHub Dark"
 }
