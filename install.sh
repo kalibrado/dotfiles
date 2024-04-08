@@ -23,11 +23,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 echo "upgrade pip"
 pip install -q --upgrade pip
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-source  $HOME/.bashrc
-
-nvm install --lts
-
 # Visual Studio Code :: Package list
 pkglist=(
     aaron-bond.better-comments
