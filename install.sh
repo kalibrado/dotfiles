@@ -3,14 +3,11 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
-
-
 echo "Creating symlink to bash folder in home directory."
-cp -r ./bash/* ~/
+cp -r bash/ ~/
 
 echo "Creating symlink to zsh folder in home directory."
-cp -r ./zsh/* ~/
-
+cp -r zsh/ ~/
 
 echo "update"
 sudo apt-get -qq update
