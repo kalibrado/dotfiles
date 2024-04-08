@@ -4,10 +4,12 @@
 ############################
 
 echo "Creating symlink to bash folder in home directory."
-cp -r bash/* $HOME/
+cp -R ./bash/. $HOME/
 
 echo "Creating symlink to zsh folder in home directory."
-cp -r zsh/* $HOME/
+cp -R ./zsh/. $HOME/
+
+source ~/.bashrc
 
 echo "update"
 sudo apt-get -qq update
