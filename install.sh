@@ -6,10 +6,10 @@
 
 
 echo "Creating symlink to bash folder in home directory."
-mv bash/* ~/
+cp -r ./bash/* ~/
 
 echo "Creating symlink to zsh folder in home directory."
-mv zsh/* ~/
+cp -r ./zsh/* ~/
 
 
 echo "update"
