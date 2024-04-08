@@ -9,7 +9,7 @@ cp -R ./bash/. $HOME/
 echo "Creating symlink to zsh folder in home directory."
 cp -R ./zsh/. $HOME/
 
-source ~/.bashrc
+source  $HOME/.bashrc
 
 echo "update"
 sudo apt-get -qq update
@@ -24,7 +24,8 @@ echo "upgrade pip"
 pip install -q --upgrade pip
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-source ~/.bashrc
+source  $HOME/.bashrc
+
 nvm install --lts
 
 # Visual Studio Code :: Package list
@@ -88,9 +89,9 @@ pkglist=(
 
 if test /tmp/code-server/bin/code-server; then
     for i in ${pkglist[@]}; do
-        code-server --install-extension $i
+        /tmp/code-server/bin/code-server --install-extension $i
     done
 fi
 
 echo "Add Settings code-server"
-cp settings.json  ~/.local/share/code-server/User
+cp ./settings.json  $HOME/.local/share/code-server/User
