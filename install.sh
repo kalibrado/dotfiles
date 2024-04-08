@@ -3,19 +3,30 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
-echo "Install ZSH"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-
-
-
 
 
 echo "Creating symlink to bash folder in home directory."
-ln -s $dir/bash/* ~/.$file
+mv bash/* ~/
 
 echo "Creating symlink to zsh folder in home directory."
-ln -s $dir/zsh/* ~/.$file
+mv zsh/* ~/
+
+
+echo "update"
+sudo apt-get -qq update
+
+echo "install -y nano git curl python3 python3-venv python3-pip"
+sudo apt-get -qq install -y nano git curl python3 python3-venv python3-pip
+
+echo "Install ZSH"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "upgrade pip"
+pip install -q --upgrade pip
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+source ~/.bashrc
+nvm install --lts
 
 # Visual Studio Code :: Package list
 pkglist=(
@@ -75,26 +86,12 @@ pkglist=(
     esbenp.prettier-vscode
     njpwerner.autodocstring
 )
-alias
 
-for i in ${pkglist[@]}; do
-    /tmp/code-server/bin/code-server --install-extension $i
-done
+if test /tmp/code-server/bin/code-server; then
+    for i in ${pkglist[@]}; do
+        code-server --install-extension $i
+    done
+fi
 
 echo "Add Settings code-server"
 cp settings.json  ~/.local/share/code-server/User
-
-echo "update"
-sudo apt-get -qq update
-
-echo "install -y nano git curl python3 python3-venv python3-pip"
-sudo apt-get -qq install -y nano git curl python3 python3-venv python3-pip
-
-echo "upgrade pip"
-pip install -q --upgrade pip
-
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-source ~/.bashrc
-nvm install --lts
-
-cat ~/.bashrc
